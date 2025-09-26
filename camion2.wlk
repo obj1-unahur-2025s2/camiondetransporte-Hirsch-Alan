@@ -1,4 +1,4 @@
-import cosas.*
+import cosas2.*
 
 object camion {
 
@@ -57,4 +57,3 @@ object camion {
     }
     
 }
-    

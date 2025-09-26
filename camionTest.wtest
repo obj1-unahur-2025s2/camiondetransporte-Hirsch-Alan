@@ -1,9 +1,22 @@
+import camiondetransporte-Hirsch-Alan.cosas.*
 import camion.*
 
-describe "group of test for camion" {
+describe "test de un par de cosas" {
 
-  test "first test" {
-    assert.that(true)
+  method initialize() {
+   camion.cargar(knightRider)
+   camion.cargar(arena)
+   arena.peso(200)
+   ladrillos.cantidad(10)
+   camion.cargar(ladrillos)
   }
 
+  test "test del camion"{
+    assert.equals(1720, camion.pesoTotal())
+    assert
+  }
+  test "puede circular el camion"{
+    assert.that(camion, puedeCircularSinSuperarElExceso())
+    
+  }
 }

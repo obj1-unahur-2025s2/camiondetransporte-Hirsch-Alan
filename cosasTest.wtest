@@ -1,9 +1,22 @@
 import cosas.*
+import camion.*
 
 describe "group of test for cosas" {
 
   test "first test" {
     assert.that(true)
+  }
+
+//
+  test "bateria anti aerea con misiles pesa 300"{
+    bateriaAntiaerea.cargarMisile()
+    assert.equals(300, bateriaAntiaerea.peso())
+  }
+
+  test "embalaje con arena que pesa 40 tiene un peso par"{
+    arena.peso(40)
+    assert.that(embalaje.esPesoPar())
+
   }
 
 }

@@ -1,3 +1,4 @@
+import camion.*
 object knightRider {
     method peso() = 500
     method peligrosidad() = 10
@@ -7,6 +8,9 @@ object knightRider {
 
 object bumbleblee {
     var esAuto = true 
+
+    method peso() = 900
+
     method transformarEnAuto() {
       esAuto = true
     }
@@ -16,6 +20,7 @@ object bumbleblee {
     // ternario me permite usar una condicional, de forma 
     //que si dice que es un auto da valor 15 significa que es flaso, de cualquier otra forma es falso
     method peligrosidad() = if(esAuto) 15 else 30
+    method pesoPar() = self.peso().even()
 }
 
 
@@ -28,6 +33,7 @@ object ladrillos {
 
 method peso() = 2 * cantidad
 method peligrosidad() = 2
+method pesoPar() =  self.peso().even()
   
 }
 
@@ -45,6 +51,7 @@ object arena {
   method peso() {
     return peso
   }
+  method pesoPar() =  self.peso().even()
 }
 
 object bateriaAntiaerea {
@@ -57,6 +64,7 @@ object bateriaAntiaerea {
   }
   method peso () = if(estaConMisiles) 300 else 200
   method peligrosidad() = if(estaConMisiles) 100 else 0
+  method pesoPar() =  self.peso().even()
 }
 
 object contenedor {
@@ -80,7 +88,7 @@ object contenedor {
     method peligrosidad() =
      if(cosasAdentro.isEmpty()) 0 
      else cosasAdentro.max({c => c.peligrosidad()}).peligrosidad()
-
+    method pesoPar() =  self.peso().even()
 }
 
 object residuos {
@@ -90,11 +98,12 @@ object residuos {
     method peligrosidad() {
       return 200
     }
+    method pesoPar() =  self.peso().even()
 
 }
 
 
-object emblaje {
+object embalaje {
 
     var cosaEnvuelta = arena
 
@@ -107,5 +116,5 @@ object emblaje {
     method peligrosidad() {
       return cosaEnvuelta.peligrosidad() * 0.5
     }
-    
+    method pesoPar() =  self.peso().even()
 }
